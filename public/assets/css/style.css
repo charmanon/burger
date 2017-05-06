@@ -20,6 +20,7 @@ h1 {
 }
 
  li {
+  font-size: 18px;
   padding: 5px;
   margin: 5px;
   background: #faebd7;
@@ -42,9 +43,12 @@ h2{
 }
 
 .create-update-form {
-  padding: 5px;
+	font-family: 'Helvetica', sans-serif;
+  font-size: 20px;
+  color:black;
+  padding: 15px;
   margin: 5px;
-  background: aqua;
+  background: green;
 }
 
 .form-group {
