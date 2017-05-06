@@ -1,52 +1,65 @@
-<h1>Burgers!</h1>
+<div class="header"><h1>Best Burgers!</h1></div>
 
-<h2>Burgers not eaten!</h2>
+<div class="container">
+  <div class = "row">
+    <div class = "col-md-5 col-lg-5" id = "uneaten">
+      <h2>Burgers not eaten!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      <li = "uneaten">
-        {{this.burger_name}}
+      <ul>
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <li>
+              {{this.burger_name}}
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="true">
-          <button type="submit">Eat time!</button>
-        </form>
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
+              <form action="/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="sleepy" value="true">
+                <button class = "btn-success" type="submit">Omnomnomnom!</button>
+              </form>
+            </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
 
-<h2>Burgers eaten!</h2>
+    <div class ="col-md-1 col-lg-1"></div>
 
-<ul>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li id = "eaten">
-        {{this.burger_name}}
+    <div class = "col-md-5 col-lg-5" id = "eaten">
+      <h2>Burgers eaten!</h2>
+        <ul>
+          {{#each burgers}}
+            {{#if this.devoured}}
+              <li>
+                {{this.burger_name}}
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="false">
-          <button type="submit">Make burger!</button>
-        </form>
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-update-form" action="/" method="POST">
-
-  <div class="form-group">
-    <label for="burger_name">Burger Name:</label>
-    <input type="text" id="burger" name="burger_name">
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="sleepy" value="false">
+                  <label type="submit">That was yummy!</label>
+                </form>
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Eaten!<br>
-    <input type="radio" name="sleepy" value="0"> Not Eaten
-  </div>
+  <div class = "row">
+    <div class = "col-md-1"></div>
+    <div class = "col-md-10">
+      <h2>Add a Burger</h2>
+      <form class="create-update-form" action="/" method="POST">
 
-  <button type="submit">Add Burger</button>
-</form>
+        <div class="form-group">
+          <label for="burger_name">Burger Name:</label>
+          <input type="text" id="burger" name="burger_name">
+          <button class = "btn-primary" type="submit">Add Burger</button>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+
+  
